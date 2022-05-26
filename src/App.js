@@ -14,6 +14,7 @@ const SubHeader = () => {
       <Toolbar
         sx={{
           textAlign: "center",
+          backgroundColor: "#3eb1c8",
         }}
       >
         <Typography

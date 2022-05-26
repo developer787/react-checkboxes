@@ -40,7 +40,7 @@ const CheckBox = ({ id, type, description }) => {
           },
           color: "#cfd2d4",
           "&.Mui-checked": {
-            color: "success",
+            color: "#3eb1c8",
           },
         }}
       />
@@ -91,7 +91,6 @@ const CompletePlanButton = ({ completed }) => {
     >
       <Button
         variant="contained"
-        color="primary"
         disabled={!completed}
         onClick={() => {
           setCelebrate(true);
@@ -106,7 +105,7 @@ const CompletePlanButton = ({ completed }) => {
           borderRadius: "20px",
           fontWeight: "bold",
           fontSize: "1rem",
-          backgroundColor: "success",
+          backgroundColor: "#3eb1c8",
           color: "white",
           "&:hover": {
             backgroundColor: "#0a5777",
