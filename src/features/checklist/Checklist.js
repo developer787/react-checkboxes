@@ -13,7 +13,7 @@ const CheckBox = ({ id, type, description }) => {
   const [selectedValue, setSelectedValue] = useState(false);
   const dispatch = useDispatch();
 
-  const handleChange = (event) => {
+  const handleChange = () => {
     setSelectedValue(!selectedValue);
     dispatch(
       itemCompleted({
