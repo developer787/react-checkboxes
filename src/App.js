@@ -1,57 +1,80 @@
-import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
-import './App.css';
+import React from "react";
+import { Checklist } from "./features/checklist/Checklist";
+import AppBar from "@mui/material/AppBar";
+import Typography from "@mui/material/Typography";
+import Container from "@mui/material/Container";
+import Toolbar from "@mui/material/Toolbar";
+import IconButton from "@mui/material/IconButton";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+import SchoolIcon from "@mui/icons-material/School";
+
+const SubHeader = () => {
+  return (
+    <AppBar position="static">
+      <Toolbar
+        sx={{
+          textAlign: "center",
+        }}
+      >
+        <Typography
+          variant="h6"
+          component="div"
+          sx={{
+            textAlign: "center",
+            width: "100%",
+          }}
+        >
+          <SchoolIcon />
+        </Typography>
+      </Toolbar>
+    </AppBar>
+  );
+};
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
+    <Container
+      disableGutters={true}
+      maxWidth={false}
+      sx={{
+        height: "100vh",
+        width: "100%",
+        backgroundColor: "#f7f7f7",
+      }}
+    >
+      <AppBar
+        sx={{
+          backgroundColor: "white",
+          color: "#5b6770",
+          textAlign: "center",
+        }}
+        position="static"
+      >
+        <Toolbar>
+          <IconButton
+            size="large"
+            edge="start"
+            color="inherit"
+            aria-label="menu"
+            sx={{ mr: 2 }}
           >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
+            <ArrowBackIcon sx={{ color: "#095576" }} />
+          </IconButton>
+          <Typography
+            variant="h6"
+            component="div"
+            sx={{
+              flexGrow: 1,
+              fontWeight: "bold",
+            }}
           >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
-      </header>
-    </div>
+            Orientation
+          </Typography>
+        </Toolbar>
+      </AppBar>
+      <SubHeader />
+      <Checklist />
+    </Container>
   );
 }
 
